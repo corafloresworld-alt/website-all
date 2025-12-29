@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louez-moi - Pépites Coffee</title>
+
+  <style>
+    @font-face {
+      font-family: 'Euclid';
+      src: url('../fonts/euclid.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #842020;
+      z-index: 1000;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo img {
+      height: 110px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #fff7f7;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f0b47c;
+    }
+
+    .nav-links a.louez-moi {
+      background-color: #c3794c;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links a.louez-moi:hover {
+      background-color: #D17A4A;
+    }
+
+    body {
+      font-family: 'Euclid', sans-serif;
+      background-color: #842020;
+      color: #fff7f7;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 3rem 1rem 1rem 1rem;
+      padding-top: 140px;
+    }
+
+    h1 {
+      color: #D17A4A;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    p.intro {
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    form {
+      background: #842020;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Euclid', sans-serif;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    input[type="submit"] {
+      background-color: #D17A4A;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #f0b47c;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: #f0b47c;
+    }
+
+    .contact-info a {
+      color: #f0b47c;
+      text-decoration: underline;
+    }
+
+    fieldset {
+      margin: 2rem 0;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid #f0b47c;
+    }
+
+    legend {
+      font-weight: 700;
+      color: #D17A4A;
+      padding: 0 0.5rem;
+    }
+
+    .formule-detail {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #f0d9c0;
+      margin-top: 0.2rem;
+      margin-left: 1.5rem;
+    }
+
+    .offre-visuelle {
+      margin-top: 3rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .offre-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .offre-item {
+      background-color: #842020;
+      border: 1px solid #f0b47c;
+      border-radius: 12px;
+      padding: 1rem;
+      max-width: 300px;
+      flex: 1 1 250px;
+      text-align: center;
+      color: #fff7f7;
+    }
+
+    .offre-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .offre-item h3 {
+      color: #D17A4A;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .offre-item ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .offre-item ul li {
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 2rem 1rem 1rem 1rem;
+        padding-top: 160px;
+      }
+      form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="/">
+          <img src="https://pepitescoffee.github.io/pepitescoffeelogo_round_color.png" alt="Logo Pépites Coffee" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/apropos/">À propos</a>
+        <a href="/lesescalespepites/">Projet</a>
+        <a href="/contact/" class="louez-moi">Louez-moi</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Privatisez Pépites Coffee</h1>
+  <p class="intro">
+    Transformez votre événement en véritable expérience café ! <br>Privatisez notre coffee truck ou coffee bar et faites voyager vos invités autour d’un café de spécialité. <br>Demandez votre devis personnalisé via le formulaire ci-dessous.
+  </p>
+
+  <form method="POST" action="https://formspree.io/f/xeokpbpg">
+    <label for="name">Nom complet *</label>
+    <input type="text" id="name" name="name" required placeholder="Votre nom complet" />
+
+    <label for="email">Adresse e-mail *</label>
+    <input type="email" id="email" name="_replyto" required placeholder="exemple@domaine.com" />
+
+    <label for="phone">Téléphone</label>
+    <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" />
+
+    <label for="event-type">Type d'événement *</label>
+    <select id="event-type" name="event-type" required>
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="mariage">Mariage</option>
+      <option value="marché/festival">Anniversaire</option>
+      <option value="privatisation">Privatisation</option>
+      <option value="événement professionnel">Événement d'entreprise</option>
+      <option value="événement professionnel">Salon / pop up</option>
+      <option value="autre">Autres (à préciser dans votre message)</option>
+    </select>
+
+    <label for="location">Lieu de la prestation *</label>
+    <input type="text" id="location" name="location" required placeholder="Ville, adresse ou lieu précis" />
+
+    <label for="guests">Nombre approximatif de convives *</label>
+    <input type="number" id="guests" name="guests" required min="1" placeholder="Ex : 50" />
+
+    <fieldset>
+      <legend>Composez votre service café *</legend>
+
+      <label>
+        <input type="checkbox" name="formule" value="Essentiel" />
+        L'Essentiel :
+        <span class="formule-detail">Espresso à volonté + 1 boisson signature par invité</span>
+      </label>
+
+      <label>
+        <input type="checkbox" name="formule" value="La rafraîchissante" />
+        La Rafraîchissante :
+        <span class="formule-detail">L'Essentiel + Jarre de citronnade maison, thé glacé ou jus artisanaux</span>
+      </label>
+
+      <label>
+        <input type="checkbox" name="formule" value="Gourmand" />
+        La Gourmande :
+        <span class="formule-detail">La Rafraîchissante + Assortiment de pâtisseries maison</span>
+      </label>
+    </fieldset>
+
+    <label for="message">Votre message / demande particulière</label>
+    <textarea id="message" name="message" placeholder="Décrivez votre projet ou posez vos questions..."></textarea>
+
+    <input type="submit" value="Envoyer votre demande de devis" />
+  </form>
+
+  <section class="offre-visuelle">
+    <div class="offre-container">
+      <div class="offre-item">
+        <img src="https://pepitescoffee.github.io/latteart2.png" alt="Boissons signatures" />
+        <h3>Boissons signatures</h3>
+        <ul>
+          <li>Latte</li>
+          <li>Latte Spéculoos</li>
+           <li>Cappuccino</li>
+          <li>Flat white</li>
+ <li>Chocolat chaud</li>
+          <li>Chaï Latte</li>
+          <li>Matcha Latte</li>
+          <li>Thés bios</li>
+          <li>  <br> </li>
+
+          <li>Lait de vache ou lait végétal disponible</li>
+
+        </ul>
+      </div>
+
+      <div class="offre-item">
+        <img src="https://pepitescoffee.github.io/cafefrappe.png" alt="Boissons froides" />
+        <h3>Boissons froides</h3>
+        <ul>
+          <li>Café frappé</li>
+          <li>Iced Latte</li>
+          <li>Moka frappé</li>
+          <li>Matcha glacé</li>
+           <li>Matcha framboise glacé</li>
+           <li>Chaï glacé</li>
+          <li>Citronnade maison</li>
+            <li>Thé glacé maison</li>
+
+        </ul>
+      </div>
+
+      <div class="offre-item">
+        <img src="https://pepitescoffee.github.io/cookies.jpeg" alt="Pâtisseries" />
+        <h3>Pâtisseries</h3>
+        <ul>
+          <li>Banana bread</li>
+          <li>Carrot cake</li>
+          <li>Cookies chocolat</li>
+          <li>Cookies chocolat blanc framboise</li>
+           <li>Cookies spéculoos</li>
+          <li>Viennoiseries</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
