@@ -118,63 +118,51 @@
 }
 
 
-    /* VIDEO HEADER */
-  .video-header {
+   /* VIDEO HEADER */
+.video-header {
   position: relative;
   width: 100%;
-  height: 80vh;         
-  min-height: 500px;     /* sécurité écran */
-  max-height: 900px;
+  height: 85vh;          /* moins haut que 100vh */
+  min-height: 500px;     /* sécurité mobile */
   overflow: hidden;
 }
 
+.video-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%; /* ⬅️ ici pour ajuster le cadrage de la vidéo, center 50%   /* centré *center 60%   /* un peu plus bas *center 70%   /* encore plus bas *center top   /* haut */
+}
+/* Overlay léger */
+.video-header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
 
-    .video-header video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 65%;
-      z-index: 1;
-    }
+/* Texte par-dessus */
+.video-header .overlay-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  padding: 1rem;
+}
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2);
-      z-index: 2;
-    }
+.video-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
 
-    .overlay-content {
-      position: relative;
-      z-index: 3;
-      color: white;
-      text-align: center;
-      top: 60%;
-      transform: translateY(-50%);
-      padding: 2rem;
-      text-shadow: 0 0px 0px rgba(0,0,0,0.6);
-    }
-
-    .overlay-content h1 {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #D17A4A;
-      margin-bottom: 1rem;
-    }
-
-    .overlay-content h2 {
-      font-size: 2rem;
-      color: #B0C2A8;
-      margin-top: 0;
-      margin-bottom: 2rem;
-      font-weight: normal;
-    }
+.video-header h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: normal;
+}
 
     /* LOGO CENTRÉ */
     .logo {
