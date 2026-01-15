@@ -34,62 +34,87 @@
       color: #5E4B3C;
     }
 
-    /* NAVBAR */
-    
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #042E89;
-      z-index: 1000;
-      padding: 0.5rem 1.5rem;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    /* ======================
+   NAVBAR – UNIVERSAL
+====================== */
 
-    .nav-logo img {
-      height: 110px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-links a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #fff7f7;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #f0b47c;
-    }
-
-    .nav-links a.louez-moi {
-      background-color: #c3794c;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-    }
-
-    .nav-links a.louez-moi:hover {
-      background-color: #D17A4A;
-    }
-
-
-    .hidden-link {
-  display: none;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #042E89;
+  z-index: 1000;
 }
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo + titre */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 42px; /* 🔥 taille maîtrisée */
+  width: auto;
+}
+
+.nav-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Liens */
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Bouton principal */
+.nav-cta {
+  background: #D17A4A;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #f0b47c;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 768px) {
+  .nav-title {
+    display: none; /* 🔥 on garde juste le logo */
+  }
+
+  .nav-logo img {
+    height: 36px;
+  }
+
+  .nav-cta {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
 
     /* VIDEO HEADER */
   .video-header {
@@ -438,19 +463,21 @@ max-width: 100px;
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a href="/">
-<img src="/assets/images/logo2-blancbleu.png" alt="Logo" />
-        </a>
-      </div>
-      <div class="nav-links">
-<a href="/apropos/" class="hidden-link">À propos</a>
-        <a href="/contact/" class="louez-moi">Louez-moi</a>
-      </div>
+<nav class="navbar">
+  <div class="nav-inner">
+    
+    <a href="/" class="nav-logo">
+      <img src="/assets/images/logo2-blancbleu.png" alt="Guillaume Fishing Trip" />
+      <span class="nav-title">Guillaume Fishing Trip</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/contact/" class="nav-cta">Louez-moi</a>
     </div>
-  </nav>
+
+  </div>
+</nav>
+
 
   <header class="video-header">
     <video autoplay muted loop playsinline>
