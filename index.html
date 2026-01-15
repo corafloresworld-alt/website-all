@@ -15,6 +15,25 @@
 
   
   <style>
+
+/* ================================
+     🎨 PALETTE DE COULEURS – SITE
+     Modifier ici pour changer tout le site
+     ================================ */
+  :root {
+    --color-bg-main: #042E89;      /* Fond principal */
+    --color-bg-secondary: #021f5a; /* Fond secondaire */
+    --color-text-main: #ffffff;   /* Texte principal */
+    --color-text-muted: #cfd8ff;  /* Texte secondaire */
+    --color-accent: #D17A4A;      /* Boutons / actions */
+    --color-accent-hover: #b86232;
+    --color-border: rgba(255,255,255,0.2);
+  }
+
+  /* ================================
+     TYPOGRAPHIE
+     ================================ */
+    
     @font-face {
       font-family: 'Euclid';
       src: url('./fonts/euclid.woff') format('woff');
@@ -30,8 +49,8 @@
 
   body {
   font-family: 'Euclid', sans-serif;
-  background: #042E89;
-  color: #5E4B3C;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
   padding-top: 70px; /* 🔥 IMPORTANT pour la navbar fixe */
 }
 
@@ -44,7 +63,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: #042E89;
+  background: var(--color-bg-main)
   z-index: 1000;
 }
 
