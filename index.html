@@ -77,6 +77,32 @@
   justify-content: space-between;
 }
 
+/* ================================
+   🚀 CALL TO ACTION
+   ================================ */
+
+.cta-container {
+  margin-top: 2rem;
+}
+
+.cta-primary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+    
 /* Logo + titre */
 .nav-logo {
   display: flex;
@@ -437,6 +463,11 @@ p,
         font-size: 1.2rem;
       }
 
+    <div class="cta-container">
+  <a href="/contact/" class="cta-primary">Réserver mon séjour</a>
+</div>
+
+
       .logo {
           top: 20%;
 max-width: 100px;
@@ -494,10 +525,16 @@ max-width: 100px;
       Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
     <div class="overlay"></div>
-    <div class="overlay-content">
-      <h1>Des moments et des sensations inoubliables </h1>
-      <h2>Séjour de pêche avec Guillaume </h2>
-    </div>
+  <div class="overlay-content">
+  <h1>Des moments et des sensations inoubliables</h1>
+  <h2>Séjour de pêche avec Guillaume</h2>
+
+  <!-- 🔥 CTA ICI -->
+  <div class="cta-container">
+    <a href="/contact" class="cta-primary">Réserver mon séjour</a>
+  </div>
+</div>
+
     <img class="logo" src="/assets/images/logo2-blancbleu.png" alt="Logo" />
   </header>
 
