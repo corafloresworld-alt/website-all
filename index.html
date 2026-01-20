@@ -67,15 +67,21 @@
   z-index: 1000;
 }
 
+    
+
+    /* ======================
+  CONTENER INTERNE
+====================== */
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.8rem 1.2rem;
+ padding: 0.6rem 1rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 
 /* ================================
    🚀 CALL TO ACTION
@@ -507,15 +513,19 @@ max-width: 100px;
 
 <nav class="navbar">
   <div class="nav-inner">
-    
+
+    <!-- Logo -->
     <a href="/" class="nav-logo">
-      <img src="/assets/images/logo2-blancbleu.png" alt="Guillaume Fishing Trip" />
-      <span class="nav-title">Guillaume Fishing Trip</span>
+      <img src="/assets/images/logo2-blancbleu.png" alt="Guillaume Fishing Trip">
     </a>
 
-    <div class="nav-links">
-      <a href="/contact/" class="nav-cta">Louez-moi</a>
+    <!-- Texte info (OPTIONNEL) -->
+    <div class="nav-info">
+      Séjours pêche Espagne 2026 – Réservations ouvertes
     </div>
+
+    <!-- Bouton -->
+    <a href="/contact" class="nav-cta">Réserver</a>
 
   </div>
 </nav>
