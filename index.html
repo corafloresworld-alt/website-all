@@ -8,7 +8,7 @@
 
   
 <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />s
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link rel="shortcut icon" href="/favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
@@ -184,15 +184,18 @@
   position: relative;
   width: 100%;
   height: calc(100vh - 70px);  /* hauteur écran moins navbar */
-  margin-top: 70px;           /* 🔥 commence sous la navbar */
   overflow: hidden;
 }
 
 .video-header video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 65%; /* ⬅️ ici pour ajuster le cadrage de la vidéo, center 50%   /* centré *center 60%   /* un peu plus bas *center 70%   /* encore plus bas *center top   /* haut */
+  z-index: 1;
 }
 /* Overlay léger */
 .video-header .overlay {
@@ -429,10 +432,16 @@
     min-height: 420px;
   }
 }
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+   .nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
       .intro,
 p,
@@ -453,6 +462,7 @@ p,
       
       .nav-logo img {
         height: 80px;
+          width: auto;
       }
 
       .nav-links {
