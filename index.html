@@ -413,15 +413,16 @@
 
 
 /* ================================
-   🐟 SECTION INFOS PRINCIPALES
+   🐟 SECTION INFOS PRINCIPALES bloc en dessous de la vidéo
    ================================ */
 
 .info-section {
-  max-width: 1200px;
+  max-width: 1400px;   /* 🔥 plus large */
   margin: 5rem auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   color: var(--color-text-main);
 }
+
 
 /* Intro */
 .info-intro {
@@ -448,7 +449,7 @@
   gap: 2.5rem;
 }
 
-/* Cartes */
+/* Cartes, image des blocs */
 .info-card {
   background: rgba(255,255,255,0.05);
   border-radius: 16px;
@@ -464,7 +465,7 @@
 
 .info-card img {
   width: 100%;
-  height: 260px;
+  height: 320px;
   object-fit: cover;
 }
 
@@ -489,6 +490,12 @@
   .info-intro h2 {
     font-size: 1.8rem;
   }
+}
+
+
+    /* 🔥 Bloc optionnel cachable */
+.info-hidden {
+  display:   /* mets none pour cacher, block pour afficher */
 }
 
     
@@ -632,27 +639,50 @@ max-width: 100px;
     </p>
   </div>
 
-  <div class="info-grid">
+<div class="info-grid">
 
-    <div class="info-card">
-      <img src="/assets/images/van+boatHorizontalpicture.png" alt="Guide de pêche">
-      <h3>Guide de pêche professionnel</h3>
-      <p>
-        Accompagnement personnalisé avec un guide passionné, adapté à votre niveau,
-        pour découvrir les meilleurs spots et progresser rapidement.
-      </p>
-    </div>
-
-    <div class="info-card">
-      <img src="/assets/images/van+boatHorizontalpicture.png" alt="Séjours pêche">
-      <h3>Séjours tout compris</h3>
-      <p>
-        Hébergement, sorties en bateau, matériel, conseils techniques…  
-        Je m’occupe de tout pour que vous profitiez pleinement de votre séjour.
-      </p>
-    </div>
-
+  <!-- BLOC 1 -->
+  <div class="info-card">
+    <img src="/assets/images/van+boatHorizontalpicture.png" alt="Guide de pêche">
+    <h3>Guide de pêche professionnel</h3>
+    <p>
+      Accompagnement personnalisé avec un guide passionné, adapté à votre niveau,
+      pour découvrir les meilleurs spots et progresser rapidement.
+    </p>
   </div>
+
+  <!-- BLOC 2 -->
+  <div class="info-card">
+    <img src="/assets/images/van+boatHorizontalpicture.png" alt="Séjours pêche">
+    <h3>Séjours tout compris</h3>
+    <p>
+      Hébergement, sorties en bateau, matériel, conseils techniques…  
+      Je m’occupe de tout pour que vous profitiez pleinement de votre séjour.
+    </p>
+  </div>
+
+  <!-- BLOC 3  -->
+  <div class="info-card info-hidden">
+    <img src="/assets/images/van+boatHorizontalpicture.png" alt="Techniques de pêche">
+    <h3>Techniques & perfectionnement</h3>
+    <p>
+      Apprenez les meilleures techniques modernes pour améliorer vos prises
+      et gagner en autonomie sur tous types de spots.
+    </p>
+  </div>
+
+  <!-- BLOC 4  -->
+  <div class="info-card info-hidden">
+    <img src="/assets/images/van+boatHorizontalpicture.png" alt="Bateau et équipement">
+    <h3>Bateau & matériel haut de gamme</h3>
+    <p>
+      Navigation confortable, matériel professionnel et sécurité maximale
+      pour une expérience premium en toute sérénité.
+    </p>
+  </div>
+
+</div>
+
 
 </section>
 
