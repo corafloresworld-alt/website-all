@@ -55,7 +55,7 @@
 }
 
 /* ======================
-   NAVBAR – UNIVERSAL (VERSION AMÉLIORÉE)
+   NAVBAR – STANDARD UNIVERSEL
 ====================== */
 
 .navbar {
@@ -63,55 +63,53 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;              /* 🔥 plus haute */
+  height: 95px; /* 🔥 plus haute */
   background: rgba(4, 46, 137, 0.6); /* transparente au départ */
-  backdrop-filter: blur(6px);  
+  backdrop-filter: blur(6px);
   z-index: 9999;
-  display: flex;
-  align-items: center;
-  transition: background 0.3s ease; /* pour l’effet scroll */
+  transition: background 0.3s ease;
 }
 
-/* Quand on scrolle */
+/* Effet scroll */
 .navbar.scrolled {
-  background: rgba(4, 46, 137, 0.95); /* 🔥 plus foncé après scroll */
+  background: rgba(4, 46, 137, 0.95);
 }
 
 .navbar-inner {
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
 
   display: grid;
   grid-template-columns: auto 1fr auto; /* gauche | centre | droite */
   align-items: center;
 }
 
-/* Logo gauche */
+/* Logo à gauche */
 .navbar-logo img {
-  height: 58px;
+  height: 72px;   /* 🔥 plus gros logo */
   width: auto;
   display: block;
 }
 
-/* Texte centre (optionnel) */
+/* Texte au centre */
 .navbar-info {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: white;
   opacity: 0.85;
 }
 
-/* Bouton droite */
+/* Bouton à droite */
 .navbar-cta {
   background: #D17A4A;
   color: white;
-  padding: 0.45rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   white-space: nowrap;
   transition: background 0.3s ease;
 }
@@ -120,19 +118,24 @@
   background: #f0b47c;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
-  .navbar-info {
-    display: none;
+
+  .navbar {
+    height: 80px;
   }
 
   .navbar-logo img {
-    height: 44px;
+    height: 52px;
+  }
+
+  .navbar-info {
+    display: none; /* caché sur mobile */
   }
 
   .navbar-cta {
-    font-size: 0.85rem;
-    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.1rem;
   }
 }
 
@@ -389,15 +392,9 @@
     height: 65vh;
     min-height: 420px;
   }
-}
+
  
 
-      .intro,
-p,
-.left-align {
-  padding: 0 1.5rem;
-  text-align: left;
-}
 
       .concept-buttons {
   flex-direction: column;
@@ -408,19 +405,7 @@ p,
   width: 80%;
 }
 
-      
-/* Logo */
-.nav-logo img {
-  height: 64px;   /* 🔥 plus gros */
-  width: auto;
-  display: block;
-}
 
-  
-
-      .nav-links a {
-        margin: 0.5rem 0;
-      }
 
       .concept {
         width: 100%;
