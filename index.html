@@ -479,20 +479,88 @@ max-width: 100px;
         max-width: 100%;
       }
 
-    }
 
-    @media (max-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
-    gap: 1rem;
-    margin: 3rem auto;
+/* ================================
+   🐟 SECTION INFOS PRINCIPALES
+   ================================ */
+
+.info-section {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  color: var(--color-text-main);
+}
+
+/* Intro */
+.info-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.info-intro h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-intro p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Grille des blocs */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* Cartes */
+.info-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  padding-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.info-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  margin: 1.2rem 1.2rem 0.6rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 
-  .image-tile {
-    aspect-ratio: 1 / 1;
+  .info-intro h2 {
+    font-size: 1.8rem;
   }
 }
 
+  
+    
   </style>
 </head>
 
@@ -553,10 +621,10 @@ max-width: 100px;
 <section class="info-section">
 
   <div class="info-intro">
-    <h2>Une expérience de pêche unique en Andalousie</h2>
+    <h2>Vivez une expérience de pêche unique en Andalousie</h2>
     <p>
-      Passion, liberté, partage et sensations fortes…  
-      Je vous accueille dans un coin de paradis entre mer, océan et lacs pour vivre une semaine intense de pêche sportive.
+      Entre mer, océan et lacs, je vous accueille pour des séjours de pêche sur mesure,
+      dans un cadre exceptionnel, entre passion, partage et sensations fortes.
     </p>
   </div>
 
@@ -566,21 +634,24 @@ max-width: 100px;
       <img src="/assets/images/van+boatHorizontalpicture.png" alt="Guide de pêche">
       <h3>Guide de pêche professionnel</h3>
       <p>
-        Accompagnement personnalisé, techniques adaptées à votre niveau et découverte des meilleurs spots de la région.
+        Accompagnement personnalisé avec un guide passionné, adapté à votre niveau,
+        pour découvrir les meilleurs spots et progresser rapidement.
       </p>
     </div>
 
     <div class="info-card">
-      <img src="/assets/images/van+boatHorizontalpicture.png" alt="Séjours de pêche">
+      <img src="/assets/images/van+boatHorizontalpicture.png" alt="Séjours pêche">
       <h3>Séjours tout compris</h3>
       <p>
-        Hébergement, sorties en bateau, matériel et conseils inclus pour une expérience inoubliable en toute sérénité.
+        Hébergement, sorties en bateau, matériel, conseils techniques…  
+        Je m’occupe de tout pour que vous profitiez pleinement de votre séjour.
       </p>
     </div>
 
   </div>
 
 </section>
+
 
   <div class="image-grid">
   <div class="image-tile">
