@@ -55,8 +55,8 @@
 }
 
 
-    /* ======================
-   NAVBAR – UNIVERSAL
+/* ======================
+   NAVBAR – STANDARD PRO
 ====================== */
 
 .navbar {
@@ -64,81 +64,40 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;              /* hauteur fixe propre */
-  background: rgba(4, 46, 137, 0.9);
-  backdrop-filter: blur(6px);  
-  z-index: 9999;            /* 🔥 très haut pour passer au-dessus de la vidéo */
-  display: flex;
-  align-items: center;     /* centre verticalement le contenu */
+  height: 70px;
+  background: rgba(4, 46, 137, 0.95);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
 }
 
-
-    /* ======================
-  CONTENER INTERNE
-====================== */
-.nav-inner {
+.navbar-inner {
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
- padding: 0.6rem 1rem;
+  padding: 0 1.2rem;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* gauche | centre | droite */
   align-items: center;
-  justify-content: space-between;
 }
 
-
-/* ================================
-   🚀 CALL TO ACTION
-   ================================ */
-
-.cta-container {
-  margin-top: 2rem;
-}
-
-.cta-primary {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  background: var(--color-accent);
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.cta-primary:hover {
-  background: var(--color-accent-hover);
-  transform: translateY(-2px);
-}
-
-    
-/* Logo */
-.nav-logo img {
-  height: 48px; /* 🔥 bien visible */
+/* Logo gauche */
+.navbar-logo img {
+  height: 46px;
   width: auto;
   display: block;
 }
 
-  
-/* Texte info (promo / news) */
-.nav-info {
-  font-size: 0.85rem;
-  color: #ffffff;
-  opacity: 0.85;
+/* Texte centre (optionnel) */
+.navbar-info {
   text-align: center;
-  flex: 1;
-  display: ; /* mettre none si je veux que ca soit caché*/
-
-}
-/* Liens */
-.nav-links a {
-  text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  color: white;
+  opacity: 0.85;
 }
 
-/* Bouton principal */
-.nav-cta {
+/* Bouton droite */
+.navbar-cta {
   background: #D17A4A;
   color: white;
   padding: 0.45rem 1.2rem;
@@ -150,29 +109,21 @@
   transition: background 0.3s ease;
 }
 
-.nav-cta:hover {
+.navbar-cta:hover {
   background: #f0b47c;
 }
 
-/* ======================
-   MOBILE
-====================== */
-
+/* Mobile */
 @media (max-width: 768px) {
-
-  .nav-inner {
-    padding: 0.5rem 0.8rem;
+  .navbar-info {
+    display: none;
   }
 
-  .nav-logo img {
-    height: 40px;
+  .navbar-logo img {
+    height: 38px;
   }
 
-  .nav-info {
-    display: none; /* 🔥 caché sur mobile */
-  }
-
-  .nav-cta {
+  .navbar-cta {
     font-size: 0.85rem;
     padding: 0.4rem 1rem;
   }
@@ -432,16 +383,7 @@
     min-height: 420px;
   }
 }
-   .nav-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+ 
 
       .intro,
 p,
@@ -465,11 +407,7 @@ p,
           width: auto;
       }
 
-      .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
-      }
+  
 
       .nav-links a {
         margin: 0.5rem 0;
@@ -490,10 +428,6 @@ p,
       .overlay-content h2 {
         font-size: 1.2rem;
       }
-
-    <div class="cta-container">
-  <a href="/contact/" class="cta-primary">Réserver mon séjour</a>
-</div>
 
 
       .logo {
@@ -532,20 +466,20 @@ max-width: 100px;
 <body>
 
 <nav class="navbar">
-  <div class="nav-inner">
+  <div class="navbar-inner">
 
-    <!-- Logo -->
-    <a href="/" class="nav-logo">
+    <!-- Logo gauche -->
+    <a href="/" class="navbar-logo">
       <img src="/assets/images/logo2-blancbleu.png" alt="Guillaume Fishing Trip">
     </a>
 
-    <!-- Texte info (OPTIONNEL) -->
-    <div class="nav-info">
+    <!-- Texte centre (tu peux cacher avec display:none) -->
+    <div class="navbar-info">
       Séjours pêche Espagne 2026 – Réservations ouvertes
     </div>
 
-    <!-- Bouton -->
-    <a href="/contact" class="nav-cta">Réserver</a>
+    <!-- Bouton droite -->
+    <a href="/contact" class="navbar-cta">Réserver</a>
 
   </div>
 </nav>
