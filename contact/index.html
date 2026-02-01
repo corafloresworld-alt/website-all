@@ -14,8 +14,11 @@
     }
 
     
-    /* NAVBAR */
-  .navbar {
+ /* ======================
+   NAVBAR – UNIVERSELLE
+====================== */
+
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,48 +34,68 @@
   height: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Logo */
 .navbar-logo img {
   height: 70px;
+  width: auto;
+}
+
+/* Texte promo (OPTIONNEL) */
+.navbar-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.85;
 }
 
 /* Liens */
 .navbar-links {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.2rem;
   align-items: center;
 }
 
 .navbar-links a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 1rem;
   font-weight: 500;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.navbar-links a:hover {
-  opacity: 1;
-}
-
-/* Lien actif */
 .navbar-links a.active {
   font-weight: 700;
-  opacity: 1;
+  border-bottom: 2px solid #D17A4A;
 }
 
-/* Mobile */
+/* Bouton réserver */
+.navbar-links .cta {
+  background: #D17A4A;
+  padding: 0.5rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.navbar-links .cta:hover {
+  background: #f0b47c;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .navbar-links {
-    gap: 1.2rem;
+  .navbar-info {
+    display: none;
+  }
+
+  .navbar-logo img {
+    height: 52px;
   }
 }
+
 
 
     body {
