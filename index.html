@@ -98,6 +98,30 @@
   opacity: 0.85;
 }
 
+    /* ======================
+   ANIMATION PROMO NAVBAR
+====================== */
+
+.promo-animate {
+  animation: promoPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes promoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+}
+
+
 /* Liens */
 .navbar-links {
   display: flex;
@@ -138,6 +162,11 @@
   .navbar-logo img {
     height: 52px;
   }
+
+  .promo-animate {
+    animation: none;
+  }
+ 
 }
 
 
@@ -679,6 +708,11 @@ max-width: 100px;
     <div class="navbar-info">
       Séjours pêche Espagne 2026 – Réservations ouvertes
     </div>
+
+    <div class="navbar-info promo-animate">
+  Séjour pêche Espagne 2026
+</div>
+
 
     <!-- Liens / Boutons droite -->
     <div class="navbar-links">
