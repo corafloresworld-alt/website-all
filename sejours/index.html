@@ -132,6 +132,34 @@
     font-size: 1rem;
   }
 
+    /* ======================
+   CTA – RÉSERVER LE SÉJOUR
+====================== */
+.cta-section {
+  text-align: center;
+  margin: 3.5rem 0 4rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 1.1rem 2.6rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  opacity: 0.95;
+}
+
+    
   /* ======================
      IMAGE IMMERSIVE
   ====================== */
@@ -226,12 +254,26 @@
       </p>
     </div>
 
+    <div class="cta-section">
+  <a href="/contact/" class="cta-btn">
+    Réserver ce séjour
+  </a>
+</div>
+
+
   </div>
 
   <div class="immersive">
     <!-- Image optionnelle -->
     <img src="/assets/images/peche-immersive.jpg" alt="Séjour de pêche en Espagne">
   </div>
+
+  <p style="text-align:center; margin-top:2rem;">
+  <a href="/contact/" style="color:var(--color-accent); font-weight:600; text-decoration:none;">
+    → Demander un devis personnalisé
+  </a>
+</p>
+
 
 </section>
 
