@@ -121,10 +121,38 @@
       color: var(--color-text-muted);
     }
 
+
+    /* ================================
+   🖼️ IMAGE IMMERSIVE – BAS DE PAGE IMAGE IMMERSIVE – TEMPLATE
+
+Dimensions idéales :
+- 2000 x 900 px
+================================ */
+
+.about-image {
+  margin: 5rem auto 0;
+  max-width: 1400px;
+  padding: 0 1.5rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+
+
     /* Responsive */
     @media (max-width: 768px) {
       .about-container h1 {
         font-size: 2.1rem;
+
+       .about-image img {
+    height: 260px;
+
       }
     }
   </style>
@@ -182,6 +210,11 @@
       Sécurité, convivialité et accompagnement personnalisé sont au cœur de chaque séjour.
     </p>
   </section>
+
+
+  <section class="about-image">
+  <img src="/assets/images/peche-immersion.jpg" alt="Séjour de pêche en Espagne">
+</section>
 
 </main>
 
