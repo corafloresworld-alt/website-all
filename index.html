@@ -668,6 +668,11 @@ max-width: 100px;
   padding: 2.5rem 1rem 2rem;
   color: var(--color-text-muted);
   font-size: 0.9rem;
+
+  /* 🔥 force l’alignement correct même si body est en flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -684,8 +689,9 @@ max-width: 100px;
 }
 
 .footer-pipelette {
-  height: 2px;   /* 22–28px est parfait */
-  width: auto;
+  max-height: 26px;   /* 🔥 la clé */
+  width: auto !important;
+  height: auto;
   display: inline-block;
 }
 
