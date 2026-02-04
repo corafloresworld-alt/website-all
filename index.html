@@ -666,6 +666,33 @@ max-width: 100px;
         max-width: 100%;
       }
 
+/* ================================
+   FOOTER – SIMPLE & CENTRÉ
+================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-main {
+  margin-bottom: 0.8rem;
+}
+
+.footer-made {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.85;
+}
+
+.footer-pipelette {
+  height: 26px; /* ajuste ici si besoin */
+  width: auto;
+}
 
 
   
@@ -841,12 +868,26 @@ max-width: 100px;
 
 </div>
 
-
-<footer>
-  <p>
-    &copy; 2026 Guillaume Fishing Trip Spain. Tous droits réservés. &nbsp;
+<footer class="site-footer">
+  <p class="footer-main">
+    © 2026 Guillaume Fishing Trip. Tous droits réservés.
   </p>
+
+  <div class="footer-made">
+    <span>Fait avec ❤️ par</span>
+    <img
+      src="/assets/images/pipelette.png"
+      alt="Pipelette"
+      class="footer-pipelette"
+    />
+  </div>
+
 </footer>
+
+  <a href="https://pipelette.fr" target="_blank">
+  <img src="/assets/images/pipelette.png" alt="Pipelette" class="footer-pipelette" />
+</a>
+
 
 
 </body>
