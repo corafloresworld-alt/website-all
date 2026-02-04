@@ -577,6 +577,8 @@ input[type="submit"]:hover,
   text-align: center;
   margin: 1.6rem 1.2rem 1.2rem;
 
+}
+
 .info-card p {
   font-size: 1rem;
   color: var(--color-text-muted);
@@ -591,35 +593,41 @@ input[type="submit"]:hover,
 
 .site-footer {
   width: 100%;
-  background: rgba(0,0,0,0.15); /* 🔥 légèrement plus sombre */
-  text-align: center;
+  background: rgba(0,0,0,0.18);
   padding: 2.5rem 1rem 2rem;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
 .footer-main {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-made {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  opacity: 0.85;
+  justify-content: center;
+  gap: 0.4rem;
 }
 
-/* 🔥 OVERRIDE TOTAL DES RÈGLES IMG */
-.footer-pipelette {
-  max-height: 26px;
+
+/* 🔥 SÉCURITÉ ABSOLUE POUR LE LOGO PIPELETTE */
+.site-footer img {
   width: auto !important;
-  height: auto !important;
-  display: inline-block;
+  max-width: none !important;
+}
+
+.footer-pipelette {
+  height: 26px !important;
+  width: auto !important;
+  max-width: 26px !important;
 }
 
 
