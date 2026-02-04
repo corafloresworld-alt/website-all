@@ -135,37 +135,33 @@
     /* ======================
    CTA – RÉSERVER LE SÉJOUR
 ====================== */
-.cta-section {
-  text-align: center;
-  margin: 3.5rem 0 4rem;
-}
 
 .cta-btn {
   display: inline-block;
   padding: 1.1rem 2.6rem;
-  background: var(--color-accent);
+  background: var(--color-accent);   /* 🔥 BLEU */
   color: white;
-  justify-content: center;
   text-decoration: none;
   font-size: 1.15rem;
   font-weight: 600;
   border-radius: 999px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-    .cta-center {
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+  .cta-center {
   display: flex;
   justify-content: center;
   margin: 4rem 0; /* espace au-dessus et en dessous */
 }
 
 
-.cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  opacity: 0.95;
-}
+
 
     
   /* ======================
@@ -264,9 +260,10 @@
 
   </div>
 
-     <div class="cta-center">
-  <a href="/contact/" class="action-btn">Réserver ce séjour</a>
+<div class="cta-center">
+  <a href="/contact/" class="cta-btn">Réserver ce séjour</a>
 </div>
+
   
   <div class="immersive">
     <!-- Image optionnelle -->
