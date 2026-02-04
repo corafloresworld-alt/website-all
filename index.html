@@ -585,23 +585,22 @@ input[type="submit"]:hover,
 }
 
   
-    /* ================================
+   /* ================================
    FOOTER – SIMPLE & CENTRÉ
 ================================ */
 
 .site-footer {
   width: 100%;
+  background: rgba(0,0,0,0.15); /* 🔥 légèrement plus sombre */
   text-align: center;
   padding: 2.5rem 1rem 2rem;
   color: var(--color-text-muted);
   font-size: 0.9rem;
 
-  /* 🔥 force l’alignement correct même si body est en flex */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .footer-main {
   margin-bottom: 0.8rem;
@@ -615,13 +614,13 @@ input[type="submit"]:hover,
   opacity: 0.85;
 }
 
+/* 🔥 OVERRIDE TOTAL DES RÈGLES IMG */
 .footer-pipelette {
-  max-height: 26px;   /* 🔥 la clé */
+  max-height: 26px;
   width: auto !important;
-  height: auto;
+  height: auto !important;
   display: inline-block;
 }
-
 
 
 /* Responsive mobile */
