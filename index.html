@@ -671,6 +671,32 @@ input[type="submit"]:hover,
   display:   /* mets none pour cacher, block pour afficher */
 }
 
+/* ======================
+   MOBILE – NETTOYAGE NAVBAR
+====================== */
+@media (max-width: 768px) {
+
+  /* Navbar un peu plus basse */
+  .navbar {
+    height: 80px;
+  }
+
+  /* 🔥 SUPPRESSION TOTALE DE L’ANNONCE */
+  .navbar-info,
+  .announcement {
+    display: none !important;
+  }
+
+  /* Logo plus petit */
+  .navbar-logo img {
+    height: 52px;
+  }
+
+  /* Ajustement du body pour la navbar fixe */
+  body {
+    padding-top: 80px;
+  }
+}
 
  
     /* RESPONSIVE */
