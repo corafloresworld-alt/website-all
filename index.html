@@ -676,14 +676,12 @@ input[type="submit"]:hover,
     /* RESPONSIVE */
       @media (max-width: 768px) {
   .video-header {
-    height: 65vh;
-    min-height: 420px;
+    height: 60vh;
+    min-height: 360px;
   }
 
  
-
-
-      .concept-buttons {
+  .concept-buttons {
   flex-direction: column;
   align-items: center;
 }
@@ -692,26 +690,25 @@ input[type="submit"]:hover,
   width: 80%;
 }
 
-
-
-      .concept {
+.concept {
         width: 100%;
       }
 
-      .overlay-content {
+  .overlay-content {
   top: 50%;
   padding: 1rem;
 }
-      .overlay-content h1 {
-        font-size: 2.5rem;
+        
+.overlay-content h1 {
+        font-size: 2.1rem;
       }
 
-      .overlay-content h2 {
-        font-size: 1.2rem;
+.overlay-content h2 {
+        font-size: 1.05rem;
       }
 
 
-      .logo {
+  .logo {
           top: 20%;
 max-width: 100px;
       }
@@ -726,6 +723,27 @@ max-width: 100px;
         margin-left: 0;
         max-width: 100%;
       }
+
+
+        @media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  @media (max-width: 480px) {
+  .action-btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
 
 
 
