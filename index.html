@@ -172,7 +172,39 @@
     height: 52px;
   }
 
+    }
+  /* ======================
+   NAVBAR – MOBILE FIX
+====================== */
+@media (max-width: 768px) {
+
+  .navbar-inner {
+    display: flex;              /* 🔥 on passe en flex */
+    align-items: center;
+  }
+
+  .navbar-logo {
+    flex-shrink: 0;
+  }
+
+  .navbar-links {
+    margin-left: auto;          /* 🔥 POUSSE À DROITE */
+  }
+
+  .navbar {
+    height: 80px;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+
+  /* AUCUNE animation en mobile */
+  .navbar-info {
+    display: none !important;
+  }
 }
+
 
 
    /*  🎥 VIDEO HEADER – STANDARD SITE
@@ -671,6 +703,7 @@ input[type="submit"]:hover,
   display:   /* mets none pour cacher, block pour afficher */
 }
 
+  }
 /* ======================
    MOBILE – NETTOYAGE NAVBAR
 ====================== */
