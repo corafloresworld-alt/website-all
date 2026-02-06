@@ -152,58 +152,8 @@
 .navbar-links .cta:hover {
   background: var(--color-accent);
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .navbar {
-    height: 80px;
-  }
-
-  body {
-    padding-top: 80px; /* 🔥 correspond exactement à la hauteur de la navbar */
-  }
-
-  .navbar-info {
-    display: none;
-  }
-
-  .navbar-logo img {
-    height: 52px;
-  }
-
-    }
-  /* ======================
-   NAVBAR – MOBILE FIX
-====================== */
-@media (max-width: 768px) {
-
-  .navbar-inner {
-    display: flex;              /* 🔥 on passe en flex */
-    align-items: center;
-  }
-
-  .navbar-logo {
-    flex-shrink: 0;
-  }
-
-  .navbar-links {
-    margin-left: auto;          /* 🔥 POUSSE À DROITE */
-  }
-
-  .navbar {
-    height: 80px;
-  }
-
-  body {
-    padding-top: 80px;
-  }
-
-  /* AUCUNE animation en mobile */
-  .navbar-info {
-    display: none !important;
-  }
 }
+
 
 
 
@@ -704,106 +654,87 @@ input[type="submit"]:hover,
 }
 
   }
-/* ======================
-   MOBILE – NETTOYAGE NAVBAR
+
+ /* ======================
+   RESPONSIVE – MOBILE
 ====================== */
 @media (max-width: 768px) {
 
-  /* Navbar un peu plus basse */
+  /* NAVBAR */
   .navbar {
     height: 80px;
   }
 
-  /* 🔥 SUPPRESSION TOTALE DE L’ANNONCE */
+  body {
+    padding-top: 80px;
+  }
+
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo img {
+    height: 52px;
+  }
+
+  .navbar-links {
+    margin-left: auto;
+    gap: 1rem;
+  }
+
+  /* SUPPRESSION ANNONCE */
   .navbar-info,
   .announcement {
     display: none !important;
   }
 
-  /* Logo plus petit */
-  .navbar-logo img {
-    height: 52px;
-  }
-
-  /* Ajustement du body pour la navbar fixe */
-  body {
-    padding-top: 80px;
-  }
-}
-
- 
-    /* RESPONSIVE */
-      @media (max-width: 768px) {
+  /* HERO */
   .video-header {
     height: 60vh;
     min-height: 360px;
   }
 
- 
-  .concept-buttons {
-  flex-direction: column;
-  align-items: center;
-}
+  .overlay-content h1 {
+    font-size: 2.1rem;
+  }
 
-.concept-buttons a {
-  width: 80%;
-}
+  .overlay-content h2 {
+    font-size: 1.05rem;
+  }
 
-.concept {
-        width: 100%;
-      }
+  /* CARTES */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .overlay-content {
-  top: 50%;
-  padding: 1rem;
-}
-        
-.overlay-content h1 {
-        font-size: 2.1rem;
-      }
-
-.overlay-content h2 {
-        font-size: 1.05rem;
-      }
-
-
-  .logo {
-          top: 20%;
-max-width: 100px;
-      }
-
-      p {
-        text-align: center;
-        margin: 1rem auto;
-        max-width: 95%;
-      }
-
-      .left-align {
-        margin-left: 0;
-        max-width: 100%;
-      }
-
-
-        @media (max-width: 768px) {
+  /* GALERIE */
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
   }
+
+  /* BOUTONS */
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+
+  p {
+    text-align: center;
+    max-width: 95%;
+  }
 }
 
+/* EXTRA SMALL */
 @media (max-width: 480px) {
   .image-grid {
     grid-template-columns: 1fr;
   }
 }
-
-  @media (max-width: 480px) {
-  .action-btn {
-    width: 100%;
-    min-width: unset;
-  }
-}
-
 
 
   </style>
