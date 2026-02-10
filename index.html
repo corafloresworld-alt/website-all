@@ -453,17 +453,83 @@ input[type="submit"]:hover,
 }
     
 /* ================================
-   🖼️ GALERIE MINIATURES les 5 images 
-=============================== */
+   🎞️ SLIDER MINIATURES
+================================ */
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2rem;
-  max-width: 1400px; 
+.gallery-slider {
+  position: relative;
+  max-width: 1400px;
   margin: 5rem auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
 }
+
+.slider-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.slider-item {
+  flex: 0 0 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+
+.slider-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Flèches */
+.slider-btn {
+  background: var(--color-accent);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.slider-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+.slider-btn.prev {
+  margin-right: 1rem;
+}
+
+.slider-btn.next {
+  margin-left: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slider-item {
+    flex: 0 0 220px;
+  }
+
+  .slider-btn {
+    display: none; /* 👈 swipe au doigt sur mobile */
+  }
+}
+
 
 .image-tile {
   background: rgba(255,255,255,0.05);
@@ -754,6 +820,21 @@ input[type="submit"]:hover,
   });
 </script>
 
+<script>
+  const track = document.querySelector('.slider-track');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+
+  const scrollAmount = 300;
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+</script>
 
   
 <body>
@@ -880,23 +961,35 @@ input[type="submit"]:hover,
 </section>
 
 
-  <div class="image-grid">
-  <div class="image-tile">
-<img src="assets/images/miniature800x800.png" alt="test" />
+<section class="gallery-slider">
+
+  <button class="slider-btn prev">‹</button>
+
+  <div class="slider-track">
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    </div>
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    </div>
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    </div>
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    </div>
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    </div>
+    <div class="slider-item">
+      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+    <!-- ➕ ajoute autant d’images que tu veux -->
   </div>
-  <div class="image-tile">
-<img src="assets/images/miniature800x800.png" alt="test"/>
-  </div>
-  <div class="image-tile">
-<img src="assets/images/miniature800x800.png" alt="test" />
-  </div>
-  <div class="image-tile">
-<img src="assets/images/miniature800x800.png" alt="test" />
-  </div>
-  <div class="image-tile">
-<img src="assets/images/miniature800x800.png" alt="test" />
-  </div>
-</div>
+
+  <button class="slider-btn next">›</button>
+
+</section>
+
 
   
 <div class="action-buttons">
