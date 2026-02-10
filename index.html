@@ -452,36 +452,43 @@ input[type="submit"]:hover,
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
     
-/* ================================
-   🎞️ SLIDER MINIATURES
+
+    /* ================================
+   🎞️ SLIDER AVIS – VERSION PRO
 ================================ */
 
 .gallery-slider {
   position: relative;
   max-width: 1400px;
   margin: 5rem auto;
-  padding: 0 3rem;
-  display: flex;
-  align-items: center;
+  padding: 0 4rem;
 }
 
+/* Fenêtre visible */
+.slider-viewport {
+  overflow: hidden;
+}
+
+/* Track scrollable */
 .slider-track {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  padding: 1rem 0;
 }
 
 .slider-track::-webkit-scrollbar {
-  display: none; /* Chrome */
+  display: none;
 }
 
+/* Cartes */
 .slider-item {
   flex: 0 0 260px;
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.06);
 }
 
 .slider-item img {
@@ -491,8 +498,16 @@ input[type="submit"]:hover,
   display: block;
 }
 
-/* Flèches */
+/* ======================
+   FLÈCHES
+====================== */
+
 .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
   background: var(--color-accent);
   border: none;
   color: white;
@@ -501,35 +516,41 @@ input[type="submit"]:hover,
   height: 46px;
   border-radius: 50%;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
 }
 
 .slider-btn:hover {
   background: var(--color-accent-hover);
 }
 
-.slider-btn.prev {
-  margin-right: 1rem;
-}
+/* ======================
+   MOBILE
+====================== */
 
-.slider-btn.next {
-  margin-left: 1rem;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
+  .slider-btn {
+    display: none; /* swipe only */
+  }
+
   .slider-item {
     flex: 0 0 220px;
   }
-
-  .slider-btn {
-    display: none; /* 👈 swipe au doigt sur mobile */
-  }
 }
 
+    
 
 .image-tile {
   background: rgba(255,255,255,0.05);
@@ -958,35 +979,31 @@ input[type="submit"]:hover,
 </div>
 
 
-</section>
-
-
 <section class="gallery-slider">
 
-  <button class="slider-btn prev">‹</button>
+  <button class="slider-btn prev" aria-label="Précédent">‹</button>
 
-  <div class="slider-track">
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+  <div class="slider-viewport">
+    <div class="slider-track">
+      <div class="slider-item">
+        <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+      </div>
+      <div class="slider-item">
+        <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+      </div>
+      <div class="slider-item">
+        <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+      </div>
+      <div class="slider-item">
+        <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+      </div>
+      <div class="slider-item">
+        <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
+      </div>
     </div>
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
-    </div>
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
-    </div>
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
-    </div>
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
-    </div>
-    <div class="slider-item">
-      <img src="/assets/images/miniature800x800.png" alt="Séjour pêche">
-    <!-- ➕ ajoute autant d’images que tu veux -->
   </div>
 
-  <button class="slider-btn next">›</button>
+  <button class="slider-btn next" aria-label="Suivant">›</button>
 
 </section>
 
