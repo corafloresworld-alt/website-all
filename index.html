@@ -1,4 +1,4 @@
-<html lang="fr">
+x<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -430,21 +430,6 @@ input[type="submit"]:hover,
   height: 48px;
 }
 
-.concept-buttons a.instagram-button {
-  padding: 10px; /* Ajuste ici selon ton besoin visuel */
-  background-color: var(--color-accent);
-  border-radius: 12px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.concept-buttons a.instagram-button img {
-  width: 48px; /* Taille de l'icône */
-  height: 48px;
-  display: block;
-}
 
 
 
@@ -573,6 +558,24 @@ input[type="submit"]:hover,
   color: var(--color-text-muted);
   margin: 0 1.2rem;
   line-height: 1.6;
+}
+
+
+    /* =========================
+   BOUTON AVEC ICÔNE (INSTAGRAM)
+========================= */
+
+.action-btn--icon {
+  display: flex;              /* 🔥 centre le contenu */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Instagram dans le bouton */
+.btn-icon {
+  height: 24px;               /* ✅ taille idéale */
+  width: auto;
+  display: block;
 }
 
   
@@ -902,9 +905,20 @@ input[type="submit"]:hover,
 
   <a href="/sejours" class="action-btn">Découvrir les séjours</a>
 
-  <a href="https://www.instagram.com/guillaumefishingtrip/" target="_blank" class="action-btn">
-    Nous retrouver sur Instagram
-  </a>
+<a href="https://www.instagram.com/guillaumefishingtrip/" 
+   target="_blank" 
+   class="action-btn action-btn--icon">
+  
+  <img 
+    src="/assets/images/logoinstagram.png" 
+    alt="Instagram Guillaume Fishing Trip" 
+    class="btn-icon"
+  />
+
+</a>
+
+
+
 
 </div>
 
