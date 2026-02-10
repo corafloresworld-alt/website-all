@@ -842,11 +842,15 @@ input[type="submit"]:hover,
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
   const track = document.querySelector('.slider-track');
   const nextBtn = document.querySelector('.slider-btn.next');
   const prevBtn = document.querySelector('.slider-btn.prev');
 
-  const scrollAmount = 300;
+  if (!track || !nextBtn || !prevBtn) return;
+
+  const scrollAmount = 320;
 
   nextBtn.addEventListener('click', () => {
     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -855,7 +859,10 @@ input[type="submit"]:hover,
   prevBtn.addEventListener('click', () => {
     track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
+
+});
 </script>
+
 
   
 <body>
