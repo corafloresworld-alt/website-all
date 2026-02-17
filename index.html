@@ -477,6 +477,28 @@ input[type="submit"]:hover,
   padding: 0 4rem;
 }
 
+.gallery-slider::before,
+.gallery-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.gallery-slider::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg-main), transparent);
+}
+
+.gallery-slider::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg-main), transparent);
+}
+
+
 
 /* Fenêtre visible */
 .slider-viewport {
