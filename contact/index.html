@@ -107,22 +107,22 @@
 } 
 
 
+body {
+  font-family: 'Euclid', sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
 
+  margin: 0;
+  min-height: 100vh;
 
-    body {
-      font-family: 'Euclid', sans-serif;
-      background-color:  var(--color-bg-main);
-      color: var(--color-text-main);      
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 3rem 1rem 1rem 1rem;
-      padding-top: 140px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 3rem 1rem 1rem 1rem;
+  padding-top: 95px; /* 🔥 même valeur que les autres pages */
+}
+
 
     h1 {
       color: var(--color-accent);
@@ -358,6 +358,26 @@ form select:focus,
 form textarea:focus {
   outline: none;
   border-color: var(--color-accent);
+}
+
+    /* ======================
+   RESPONSIVE NAVBAR MOBILE
+====================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 80px;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+
+  .navbar-logo img {
+    height: 52px;
+  }
+
 }
 
 
