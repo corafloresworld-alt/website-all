@@ -242,12 +242,15 @@ body {
       width: 100%;
     }
 
-    .offre-container {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+ .offre-container {
+  display: flex;
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: stretch;   /* 🔥 IMPORTANT */
+
+  flex-wrap: wrap;
+}
 
     .contact-container {
     width: 100%;
@@ -264,9 +267,9 @@ body {
   padding: 1rem;
 
   width: 100%;
-  max-width: 340px;
+  max-width: 320px;
 
-  flex: 0 0 340px;
+  flex: 0 0 320px;
 
   text-align: center;
 }
