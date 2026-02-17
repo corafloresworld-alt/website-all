@@ -30,6 +30,13 @@
     --color-border: rgba(255,255,255,0.2);
   }
 
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
     @font-face {
       font-family: 'Euclid';
       src: url('../fonts/euclid.woff') format('woff');
@@ -254,12 +261,15 @@ body {
   flex-wrap: wrap;
 }
 
-    .contact-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+.contact-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  box-sizing: border-box;   /* ✅ empêche le dépassement */
+}
+
 
 
    .offre-item {
