@@ -181,14 +181,15 @@ body {
     overflow: hidden;
   }
 
- .immersive img {
+.immersive img {
   width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 18px;
+  height: auto;          /* 🔥 hauteur automatique */
+  max-height: 520px;     /* limite pour desktop */
+  object-fit: contain;   /* 🔥 montre toute l’image */
+  display: block;
+  margin: 0 auto;
 }
+
 
 
   /* ======================
