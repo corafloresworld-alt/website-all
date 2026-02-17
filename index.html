@@ -871,6 +871,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrollAmount = 320;
 
+  function updateButtons() {
+    const scrollLeft = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+
+    if (scrollLeft <= 10) {
+      prevBtn.style.opacity = "0";
+      prevBtn.style.pointerEvents = "none";
+    } else {
+      prevBtn.style.opacity = "1";
+      prevBtn.style.pointerEvents = "auto";
+    }
+
+    if (scrollLeft >= maxScroll - 10) {
+      nextBtn.style.opacity = "0";
+      nextBtn.style.pointerEvents = "none";
+    } else {
+      nextBtn.style.opacity = "1";
+      nextBtn.style.pointerEvents = "auto";
+    }
+  }
+
   nextBtn.addEventListener('click', () => {
     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
@@ -879,8 +900,13 @@ document.addEventListener("DOMContentLoaded", () => {
     track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
 
+  track.addEventListener('scroll', updateButtons);
+
+  updateButtons();
+
 });
 </script>
+
 
 
   
