@@ -491,7 +491,10 @@ input[type="submit"]:hover,
   scroll-behavior: smooth;
   scrollbar-width: none;
   padding: 1rem 0;
+
+  scroll-snap-type: x mandatory;
 }
+
 
 .slider-track::-webkit-scrollbar {
   display: none;
@@ -503,6 +506,9 @@ input[type="submit"]:hover,
   border-radius: 16px;
   overflow: hidden;
   background: rgba(255,255,255,0.06);
+
+  scroll-snap-align: start;
+
 }
 
 .slider-item img {
