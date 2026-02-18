@@ -81,6 +81,7 @@
 
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 /* Logo */
@@ -89,15 +90,16 @@
   width: auto;
 }
 
-
- .navbar-info {
-  display:  /* Logo, mettre none pour la cacher  */
+.navbar-info {
+  flex: 1;                 /* 🔥 prend l'espace entre logo et liens */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .announcement {
-  overflow: hidden;
-  white-space: nowrap;
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
@@ -105,22 +107,23 @@
   display: inline-block;
   white-space: nowrap;
 
-  animation: scroll-text 18s linear infinite;
+  padding-left: 100%;     /* 🔥 start hors écran */
+  animation: scroll-text 20s linear infinite;
 
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-accent);
 }
 
-/* Animation correcte : part de la droite écran → sort à gauche */
 @keyframes scroll-text {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 
 .navbar-links {
