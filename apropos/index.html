@@ -144,13 +144,14 @@ Dimensions idéales :
 
 .about-image img {
   width: 100%;
-  height: auto;              /* 🔥 garde les proportions */
-  max-height: 520px;         /* limite la hauteur */
-  object-fit: cover;
-  object-position: center 30%; /* 🔥 remonte le cadrage center 20%  → monte encore, center 40%  → descend, center center → centré*/
-  border-radius: 18px;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
+  border-radius: 18px; /* 🔥 coins arrondis ici */
 }
+
 
 
 @media (max-width: 768px) {
