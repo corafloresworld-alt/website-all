@@ -359,17 +359,27 @@ CSS object-fit: cover*/
 
 .action-btn {
   min-width: 240px;
-  padding: 1rem 2rem;
+  height: 52px; /* 🔥 hauteur fixe propre */
+  
+  display: flex; /* 🔥 active centrage parfait */
+  align-items: center; /* 🔥 centre verticalement */
+  justify-content: center; /* 🔥 centre horizontalement */
+
+  padding: 0 2rem; /* 🔥 padding horizontal seulement */
+
   background: var(--color-accent);
   color: var(--color-text-main);
   text-decoration: none;
   text-align: center;
+
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 600;
+
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
+
 
 .action-btn:hover {
   background: var(--color-accent);
