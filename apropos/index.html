@@ -137,19 +137,18 @@ Dimensions idéales :
 ================================ */
 
 .about-image {
-  margin: 5rem auto 0;
-  max-width: 1400px;
+  margin: 4rem auto;
+  max-width: 1000px; /* 🔥 même largeur que page séjours */
   padding: 0 1.5rem;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 .about-image img {
   width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
+  height: 420px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
-  border-radius: 18px; /* 🔥 coins arrondis ici */
 }
 
 
@@ -179,10 +178,14 @@ Dimensions idéales :
   .about-section {
     text-align: left;
   }
+  
+  .about-image {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 
   .about-image img {
-    max-height: 300px;
-    object-position: center center;
+    height: 300px; /* 🔥 même taille que page séjours */
   }
 
 }
